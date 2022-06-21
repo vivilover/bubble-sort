@@ -4,15 +4,16 @@
   -Using while loop, stop iteration when swap == 0 (outer loop)
 =end
 def bubble_sort(nums)
-  swap = "default value"
-  while swap != 0 do
-    swap = 0
+  unsorted = true
+  while unsorted do
+    unsorted = false
     for i in 0..nums.length-2 do # nums.length-2 because the last element does not need comparison
       if nums[i] > nums[i+1]
-        temp = nums[i+1] # 2
-        nums[i+1] = nums[i]
-        nums[i] = temp #
-        swap += 1
+        # temp = nums[i+1]
+        # nums[i+1] = nums[i]
+        # nums[i] = temp
+        nums[i], nums[i + 1] = nums[i + 1], nums[i] # Can swap this way, too!
+        unsorted = true
       end
     end # inner for loop ends
   end # outer while loop
